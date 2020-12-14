@@ -3,6 +3,9 @@
 <head>
 <title>edotau.github.io </title>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="Body&Headers.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 @font-face {
@@ -21,6 +24,35 @@ body {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.header {
+  padding: 25px;
+  text-align: center;
+  /*background: #9cba6c;*/
+  background-image: url('Images/DSC_0399Edit.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0,0,0, 0.4); 
+  border-right: 10px solid #333; 
+  border-left: 10px solid #333;
+  border-bottom: 10px solid #333;
+  color: white; 
+}
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 60px;
+  
+}
+
+.header h2{
+  font-size: 30px;
+}
+
+.responsive {
+  width: auto;
+  height: auto;
+}
+
 
 /* Footer */
 .footer {
@@ -141,20 +173,6 @@ p{
   background: #ddd;
 }
 
-
-.header {
-padding: 25px;
-  text-align: center;
- background-image: url('Images/EditedBigSur.jpg');
-  background-position: center;
-  background-size: cover;
-  background-color: rgba(0,0,0, 0.4); 
-  border-right: 10px solid #333; 
-  border-left: 10px solid #333;
-  border-bottom: 10px solid #333;
-  color: white; 
-}
-
 /* Increase the font size of the h1 element */
 .header h1 {
   font-size: 60px;
@@ -268,6 +286,14 @@ color:rgba(0, 0, 0, 0.4);
   color: black;
 }
 
+.container {
+  position: relative;
+  border-radius: 25px;
+  width: 100%;
+}
+
+
+
 </style>
 <script src="skillbar.js"></script>
 </head>
@@ -289,6 +315,17 @@ color:rgba(0, 0, 0, 0.4);
     <li>Molecular Geneticist & Computer Scientist</li>
     <li>Professional Interests: Genetics, Advanced Genome Technologies, Back-End Software Engineering</li>
     <li>Hobbies: Power Lifting Enthusiast, Football (49ers), Basketball (Warriors), Financial Independence</b></li></b></li>
+</div>
+<script src="viewPictures.js"></script>
+
+<div style="background-color: white; height: 50px"></div>
+  <div class="row">
+    <div class="column art picture">
+        <div class="container">
+          <img src="pictures/bench225.png" alt="225 Bench">
+          <div class="overlay">Bench 225</div>
+      </div>
+    </div>
 </div>
 
 </body>
