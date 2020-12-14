@@ -128,6 +128,84 @@ padding: 25px;
   color: black;
 }
 
+
+.skillbar {
+position:relative;
+display:block;
+margin-bottom:15px;
+width:100%;
+background:#eee;
+height:35px;
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+-webkit-transition:0.4s linear;
+-moz-transition:0.4s linear;
+-ms-transition:0.4s linear;
+-o-transition:0.4s linear;
+transition:0.4s linear;
+-webkit-transition-property:width, background-color;
+-moz-transition-property:width, background-color;
+-ms-transition-property:width, background-color;
+-o-transition-property:width, background-color;
+transition-property:width, background-color;
+}
+.skillbar-title {
+position:absolute;
+top:0;
+left:0;
+font-weight:bold;
+font-size:13px;
+color:#fff;
+background:#6adcfa;
+-webkit-border-top-left-radius:3px;
+-webkit-border-bottom-left-radius:4px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-bottomleft:3px;
+border-top-left-radius:3px;
+border-bottom-left-radius:3px;
+}
+
+.skillbar-title span {
+display:block;
+background:rgba(0, 0, 0, 0.1);
+padding:0 20px;
+height:35px;
+line-height:35px;
+-webkit-border-top-left-radius:3px;
+-webkit-border-bottom-left-radius:3px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-bottomleft:3px;
+border-top-left-radius:3px;
+border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+height:35px;
+width:0px;
+background:#6adcfa;
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+float: left;
+}
+
+.skill-bar-percent {
+position:absolute;
+right:10px;
+top:0;
+font-size:11px;
+height:35px;
+line-height:35px;
+color:#444;
+color:rgba(0, 0, 0, 0.4);
+}
+
+.skill-bar-detail-button {
+  float:right;
+
+}
+
 /* Ensure proper sizing */
 * {
   box-sizing: border-box;
@@ -369,11 +447,8 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
-.tab { 
-            display: inline-block; 
-            margin-left: 40px; 
-        }
 </style>
+<script src="skillbar.js"></script>
 </head>
 <body>
 <div class="navbar" class="navbar" style="max-width: 1080px; margin: auto;">
@@ -386,16 +461,104 @@ img {vertical-align: middle;}
   <a href="https://www.pinterest.com/edotau/redefine/">Pinterest</a>
 </div>
 
+
+
 <div style="max-width: 1080px; margin: auto;">
-<p>Marine Stickleback Genome Project</p>
-<p class="tab">Assembly: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsTHREEspine.fa">rabsTHREEspine.fa</a></p><br>
-<p class="tab">Visualization: <a href="http://genome.ucsc.edu/cgi-bin/hgHubConnect?hgHub_do_redirect=on&hgHubConnect.remakeTrackHub=on&hgHub_do_firstDb=1&hubUrl=http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/hub.txt">UCSC Browser</a></p><br>
-<p class="tab">Genome Sequencing: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data">raw data</a></p><br>
 
+<br>
+<h3>Programming & Scripting Languages</h3>
+<center>
 
+  <!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="95%">
+  <div class="skillbar-title" style="background: #1468dd;">
+   <span>Go (Lang)</span>
   </div>
+  <div class="skillbar-bar" style="background: #2a74db;"></div>
+  <div class="skill-bar-percent">95%</div>
+</div> <!-- End Skill Bar -->
+
+<!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="90%">
+  <div class="skillbar-title" style="background: #1468dd;"><span>Linux</span></div>
+ <div class="skillbar-bar" style="background: #2a74db;"></div>
+  <div class="skill-bar-percent">90%</div>
+</div> <!-- End Skill Bar -->
+
+<!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background: #1468dd;"><span>Python</span></div>
+  <div class="skillbar-bar" style="background: #2a74db;"></div>
+  <div class="skill-bar-percent">70%</div>
+</div> <!-- End Skill Bar -->
+
+<!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="75%">
+  <div class="skillbar-title" style="background: #1468dd;"><span>Java</span></div>
+  <div class="skillbar-bar" style="background: #2a74db;"></div>
+  <div class="skill-bar-percent">75%</div>
+</div> <!-- End Skill Bar -->
+
+<!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background: #1468dd;"><span>R</span></div>
+  <div class="skillbar-bar" style="background: #2a74db;"></div>
+  <div class="skill-bar-percent">70%</div>
+</div> <!-- End Skill Bar -->
+
+<!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="85%">
+ <div class="skillbar-title" style="background: #1468dd;"><span>Slurm</span></div>
+  <div class="skillbar-bar" style="background: #2a74db;"></div>
+  <div class="skill-bar-percent">85%</div>
+</div> <!-- End Skill Bar -->
+</div>
+
+<div style="max-width: 1080px; margin: auto;">
+
+<br>
+<h3>NGS Library Preparation & High-throughput Sequencing</h3>
+<center>
+
+  <!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="90%">
+  <div class="skillbar-title" style="background: #dbdd04;"><span>Genome-Seq</span></div>
+  <div class="skillbar-bar" style="background: #eaec04;"></div>
+  <div class="skill-bar-percent">90%</div>
+</div> <!-- End Skill Bar -->
+
+  <!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="80%">
+  <div class="skillbar-title" style="background: #dbdd04;"><span>ATAC-Seq</span></div>
+  <div class="skillbar-bar" style="background: #eaec04;"></div>
+  <div class="skill-bar-percent">80%</div>
+</div> <!-- End Skill Bar -->
+
+  <!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="85%">
+  <div class="skillbar-title" style="background: #dbdd04;"><span>RNA-Seq</span></div>
+  <div class="skillbar-bar" style="background: #eaec04;"></div>
+  <div class="skill-bar-percent">85%</div>
+</div> <!-- End Skill Bar -->
+
+  <!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="70%">
+  <div class="skillbar-title" style="background: #dbdd04;"><span>Targeted Sequencing</span></div>
+  <div class="skillbar-bar" style="background: #eaec04;"></div>
+  <div class="skill-bar-percent">70%</div>
+</div> <!-- End Skill Bar -->
+
+  <!-- Start  Skill Bar -->
+<div class="skillbar clearfix " data-percent="95%">
+  <div class="skillbar-title" style="background: #dbdd04;"><span>Quality Control & Quantification: Nanodrop, Qubit, Tape Station, PCR, DNA/RNA extractions</span></div>
+  <div class="skillbar-bar" style="background: #eaec04;"></div>
+  <div class="skill-bar-percent">95%</div>
+</div> <!-- End Skill Bar -->
+
+
+</div>
+
 
 
 </body>
-
-</html> 
+</html>
