@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
 <title>edotau.github.io </title>
-<meta content='width=device-width, initial-scale=1' name='viewport'/>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/Scripts/Top.js"></script>
 <style>
 @font-face {
     font-family: 'robotoregular';
@@ -14,35 +11,8 @@
          url('Fonts/roboto-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-
-@font-face {
-    font-family: 'roboto_condensedregular';
-    src: url('Fonts/robotocondensed-regular-webfont.woff2') format('woff2'),
-         url('Fonts/robotocondensed-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 
 }
-
-@font-face {
-    font-family: 'robotobold';
-    src: url('Fonts/roboto-bold-webfont.woff2') format('woff2'),
-         url('Fonts/roboto-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'oswald_regularregular';
-    src: url('Files/oswald-regular-webfont.woff2') format('woff2'),
-         url('Files/oswald-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 body {
   font-family: 'robotoregular', Arial, Helvetica, sans-serif;
   height: 100%;
@@ -52,34 +22,68 @@ body {
   margin-bottom: 50px;
 }
 
-
-.header {
-padding: 25px;
+/* Footer */
+.footer {
+  padding: 10px;
   text-align: center;
-  /*background: #9cba6c;*/
-  background-image: url('Images/IMG_0400Edit.jpg');
-  background-position: center;
-  background-size: cover;
-  background-color: rgba(0,0,0, 0.4); 
-  border-right: 10px solid #333; 
-  border-left: 10px solid #333;
-  border-bottom: 10px solid #333;
-  color: white; 
+  background: #ddd;
 }
 
-/* Increase the font size of the h1 element */
-.header h1 {
-  font-size: 60px;
-  
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.header h2{
-  font-size: 30px;
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
 }
 
-.responsive {
-  width: auto;
-  height: auto;
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }
 
 #myBtn {
@@ -102,6 +106,141 @@ padding: 25px;
   background-color: #555;
 }
 
+* {box-sizing: border-box}
+
+
+p{
+  color:#525252;
+  font-size:12px;
+}
+
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.side {
+  flex: 50%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  flex: 50%;
+  background-color: white;
+  padding: 20px;
+}
+
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+}
+
+
+.header {
+padding: 25px;
+  text-align: center;
+ background-image: url('Images/EditedBigSur.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0,0,0, 0.4); 
+  border-right: 10px solid #333; 
+  border-left: 10px solid #333;
+  border-bottom: 10px solid #333;
+  color: white; 
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 60px;
+}
+
+.header h2{
+  font-size: 24px;
+}
+
+
+.skillbar {
+position:relative;
+display:block;
+margin-bottom:15px;
+width:100%;
+background:#eee;
+height:35px;
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+-webkit-transition:0.4s linear;
+-moz-transition:0.4s linear;
+-ms-transition:0.4s linear;
+-o-transition:0.4s linear;
+transition:0.4s linear;
+-webkit-transition-property:width, background-color;
+-moz-transition-property:width, background-color;
+-ms-transition-property:width, background-color;
+-o-transition-property:width, background-color;
+transition-property:width, background-color;
+}
+.skillbar-title {
+position:absolute;
+top:0;
+left:0;
+font-weight:bold;
+font-size:13px;
+color:#fff;
+background:#6adcfa;
+-webkit-border-top-left-radius:3px;
+-webkit-border-bottom-left-radius:4px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-bottomleft:3px;
+border-top-left-radius:3px;
+border-bottom-left-radius:3px;
+}
+
+.skillbar-title span {
+display:block;
+background:rgba(0, 0, 0, 0.1);
+padding:0 20px;
+height:35px;
+line-height:35px;
+-webkit-border-top-left-radius:3px;
+-webkit-border-bottom-left-radius:3px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-bottomleft:3px;
+border-top-left-radius:3px;
+border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+height:35px;
+width:0px;
+background:#6adcfa;
+border-radius:3px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+float: left;
+}
+
+.skill-bar-percent {
+position:absolute;
+right:10px;
+top:0;
+font-size:11px;
+height:35px;
+line-height:35px;
+color:#444;
+color:rgba(0, 0, 0, 0.4);
+}
+
+.skill-bar-detail-button {
+  float:right;
+
+}
 /* Style the top navigation bar */
 .navbar {
   overflow: hidden;
@@ -129,220 +268,6 @@ padding: 25px;
   color: black;
 }
 
-/* Ensure proper sizing */
-* {
-  box-sizing: border-box;
-}
-
-.p_welcome {
-  font-family: 'roboto_condensedregular';
-  color: black;
-  padding: 80px;
-  text-align: center;
-}
-
-.p_welcome h2 {
-  font-family: 'oswald_regularregular';
-  font-size: 35px;
-  font-weight: bold;
-
-}
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
-  }
-}
-/* Ensure proper sizing */
-* {
-  box-sizing: border-box;
-}
-
-/* Column container */
-.row {  
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.NavContainer {
-  position: relative;
-  width: 100%;
-  max-width: 1080px;
-}
-
-.NavImage {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  max-width: 1200px;
-  height: 100%;
-  max-height: 500px;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  background-size: 100%;
-  position: relative;
-  text-align: center;
-  color:white;
-}
-.centered{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0,0,0, 0.4); 
-  font-weight: bold; 
-  border: 10px solid white; 
-  font-size: 50px; 
-  color: white; 
-  padding: 20px
-
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-  max-height: 500px;
-  max-width: 500px;
-}
-
-
-.NavContainer:hover .centered {
-  opacity: 0;
-}
-
-.NavContainer:hover .NavImage {
-  opacity: 0.3;
-}
-
-.NavContainer:hover .middle {
-  opacity: 0.9;
-}
-
-.NavText {
-  background: #ffffff;
-  color: black;
-  font-size: 16px;
-  padding: 16px 32px;
-}
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  flex: 45%;
-  background-color: white;
-
-}
-
-div.scroll1
-{
-width:100%;
-max-height:500px;
-overflow:scroll;
-float: right;
-}
-
-/* Main column */
-.main {   
-  flex: 55%;
-  background-color: white;
-}
-
-img {
-  position: relative;  
-  width: 100%;
-  height: 100%;
-}
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width:100%;
-  }
-}
-
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-.container{
-   width:100%;
-}
-div.ex3 {
-  background-color: lightblue;
-  width: 110px;
-  height: 110px;
-  overflow: auto;
-}
-
-
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* ----------- iPhone X ----------- */
-
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
-
-}
-
-</style>
 </head>
 <body>
   <center>
