@@ -293,8 +293,8 @@ color:rgba(0, 0, 0, 0.4);
 
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
 <h3>Differential Allele Specific Expression</h3>
-<img src="pictures/ase.png" width="802" height="492">
-
+Marine and Freshwater sticklebacks are crossed to generate F1 hybrids. We performed brain dissection at developmental time points to isolate both nuclei and RNA. A Summary Table of population sampled and types of libraries we created to look at each allele are described in pannel B. In addition, we performed Whole genome sequencing to call SNPs genome wide into order isolation heterozygous alleles in ATAC-Seq and RNA-Seq data in search of allele specific peaks.<br><br>
+<img src="pictures/ase.png" width="802" height="492"><br>
 <li>ATAC-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/atacseq/">bams</a></li>
 
 <li>RNA-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/rnaseq">bams</a></li>
@@ -304,7 +304,7 @@ color:rgba(0, 0, 0, 0.4);
 
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
 <h3>Genome Software Engineering</h3>
-
+Experiments that rely on aligning sequence data to a reference genome have become increasingly common. However, there are limitations when aligning sequence data to a single monoploid genome because a linear reference does not capture all the allelic variants present across individuals and populations. The most striking case of this is when large segments of DNA are present in some, or all, individuals being studied, but are not present in the reference genome. The result is that the sequencing reads annotating functional regions in these missing genomic segments will not map to the reference genome and these regions will not be analyzed. We are working to implement a computational framework to represent all common alleles within the reference genome to improve our read mapping capability and downstream analyses. The computational model represents the reference genome as a graph where nodes are genomic segments, edges represent the order and orientation of these segments, and a path through the graph represents a possible allelic variation.<br><br>
 <li>Back-end and io processing: <a href="https://github.com/edotau/goFish">goFish</a>
 <li>Slurm Compute Cluster Scripts: <a href="https://github.com/edotau/sticklebackCipher">sticklebackCipher</a></li>
 </div>
