@@ -284,27 +284,31 @@ color:rgba(0, 0, 0, 0.4);
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
 <h3>Marine Stickleback Genome</h3>
 
-<li>Assembly: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsTHREEspine.fa">rabsTHREEspine.fa</a></li>
+<li>Assembly: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsTHREEspine.fa">rabsTHREEspine</a></li>
 <li>Visualization: <a href="http://genome.ucsc.edu/cgi-bin/hgHubConnect?hgHub_do_redirect=on&hgHubConnect.remakeTrackHub=on&hgHub_do_firstDb=1&hubUrl=http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/hub.txt">UCSC Browser</a></li>
 <li>Genome Sequencing: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/assembly">raw data</a></li>
-
 </div>
+<h3>Genome-Wide Variation Between Freshwater and Marine Stickleback</h3>
+<li>Alignments: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsBepa/">Bepa x Rabs</a></li>
+<li><a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/vcfs/">SNPs</a></li>
 
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
 <h3>Differential Allele Specific Expression</h3>
-Marine and Freshwater sticklebacks are crossed to generate F1 hybrids. We performed brain dissection at developmental time points to isolate both nuclei and RNA. A Summary Table of population sampled and types of libraries we created to look at each allele are described in pannel B. In addition, we performed Whole genome sequencing to call SNPs genome wide into order isolation heterozygous alleles in ATAC-Seq and RNA-Seq data in search of allele specific peaks.<br><br>
-<img src="pictures/ase.png" width="802" height="492"><br>
-<li>ATAC-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/atacseq/">bams</a></li>
+Two different F1 hybrid (Freshwater x Marine) stickleback fish were crossed from Matadero Creek (MATA) with Little Campbell (LITC) and Rabbit Slough(RABS) with Lake Matanuska (LMK) respectively. A Summary Table of population sampled and types of libraries we created to look at each allele are described in pannel B. To investigate allele specific enhancers near regions of increased chromatin accessibility nearby differential gene expression, we generated ATAC-Seq, RNA-Seq, and WGS libraries. We perform a Fisher's Exact Test genome-wide to determine statistical significance if heterogygous SNPs sites are differentially increased or decreased in chromatin accessibility are enhancers or regulatory elements nearby differentially expressed genes.<br><br>
 
-<li>RNA-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/rnaseq">bams</a></li>
+<li>ATAC-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/atacseq/">bams</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/atacseq/peakCalls">peaks</a></li>
 
-<li>Genome-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/genomeseq">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/genomeseq">bams</a></li>
+<li>RNA-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/rnaseq">bams</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/genePred">genePredict models</a></li>
+
+<li>Genome-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/genomeseq">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/genomeseq">bams</a></li><br>
+<img src="pictures/ase.png" width="802" height="492">
 </div>
 
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
-<h3>Genome Software Engineering</h3>
-Experiments that rely on aligning sequence data to a reference genome have become increasingly common. However, there are limitations when aligning sequence data to a single monoploid genome because a linear reference does not capture all the allelic variants present across individuals and populations. The most striking case of this is when large segments of DNA are present in some, or all, individuals being studied, but are not present in the reference genome. The result is that the sequencing reads annotating functional regions in these missing genomic segments will not map to the reference genome and these regions will not be analyzed. We are working to implement a computational framework to represent all common alleles within the reference genome to improve our read mapping capability and downstream analyses. The computational model represents the reference genome as a graph where nodes are genomic segments, edges represent the order and orientation of these segments, and a path through the graph represents a possible allelic variation.<br><br>
-<li>Back-end and io processing: <a href="https://github.com/edotau/goFish">goFish</a>
+
+<br>
+<h3>Genomic Software Projects</h3>
+<li>github.com/edotau/<a href="https://github.com/edotau/goFish">goFish</a>
 <li>Slurm Compute Cluster Scripts: <a href="https://github.com/edotau/sticklebackCipher">sticklebackCipher</a></li>
 </div>
 
