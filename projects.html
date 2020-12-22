@@ -284,31 +284,39 @@ color:rgba(0, 0, 0, 0.4);
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
 <h3>Marine Stickleback Genome</h3>
 
-<li>Assembly: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsTHREEspine.fa">rabsTHREEspine</a></li>
+<li>Assembly rabsTHREEspine: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsTHREEspine.fa">Download</a></li>
 <li>Visualization: <a href="http://genome.ucsc.edu/cgi-bin/hgHubConnect?hgHub_do_redirect=on&hgHubConnect.remakeTrackHub=on&hgHub_do_firstDb=1&hubUrl=http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/hub.txt">UCSC Browser</a></li>
-<li>Genome Sequencing: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/assembly">raw data</a></li>
+<li>Genome Sequencing: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/assembly">Raw Fastq Data Files</a></li>
 </div>
 <h3>Genome-Wide Variation Between Freshwater and Marine Stickleback</h3>
-<li>Alignments: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsBepa/">Bepa x Rabs</a></li>
-<li><a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/vcfs/">SNPs</a></li>
+<li>Alignments: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsBepa/">Bams</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/chains">Chains</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/nucmer">Nucmer</a></li>
+
+
+<li>GATK: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/vcfs/">SNPs</a></li>
 
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
-<h3>Differential Allele Specific Expression</h3>
-Two different F1 hybrid (Freshwater x Marine) stickleback fish were crossed from Matadero Creek (MATA) with Little Campbell (LITC) and Rabbit Slough(RABS) with Lake Matanuska (LMK) respectively. A Summary Table of population sampled and types of libraries we created to look at each allele are described in panel B. We generated ATAC-Seq, RNA-Seq, and WGS libraries to screen for allele specific enhancers near regions of increased chromatin accessibility that perhaps be regulating differential gene expression. We perform a Fisher's Exact Test genome-wide to determine statistical significance if heterogygous SNPs sites are differentially increased or decreased in chromatin accessibility are enhancers or regulatory elements nearby differentially expressed genes.<br><br>
+<h3>Marine Freshwater Hybrid Crosses</h3>
+Two different F1 hybrid (Freshwater x Marine) stickleback fish were crossed from Matadero Creek (MATA) with Little Campbell (LITC) and Rabbit Slough(RABS) with Lake Matanuska (LMK) respectively. A Summary Table of population sampled and types of libraries we created to look at each allele are described in panel B. We generated ATAC-Seq, RNA-Seq, and WGS libraries to screen for allele specific enhancers near regions of increased chromatin accessibility that perhaps be regulating differential gene expression. We perform a Fisher's Exact Test genome-wide to determine statistical significance if heterogygous SNPs sites are differentially increased or decreased in chromatin accessibility are enhancers or regulatory elements nearby differentially expressed genes.<br>
+
+<h3>Differential Chromatin Accessibility and Gene Expression</h3>
+<li>Results: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/beds/differentialChromatin/"> Download</a></li>
+
+<br>
+<img src="pictures/ase.png" width="802" height="492">
+</div>
+
+<h3>Raw Data</h3>
 <li>ATAC-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/atacseq/">bams</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/atacseq/peakCalls">peaks</a></li>
 
 <li>RNA-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/rnaseq">bams</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/genePred">genePredict models</a></li>
 
-<li>Genome-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/genomeseq">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/genomeseq">bams</a></li><br>
-<img src="pictures/ase.png" width="802" height="492">
-</div>
+<li>Genome-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/genomeseq">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/genomeseq">bams</a></li>
 
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
 
-<br>
 <h3>Genomic Software Projects</h3>
 <li>github.com/edotau/<a href="https://github.com/edotau/goFish">goFish</a>
-<li>Slurm Compute Cluster Scripts: <a href="https://github.com/edotau/sticklebackCipher">sticklebackCipher</a></li>
+<li>Slurm Compute Cluster: <a href="https://github.com/edotau/sticklebackCipher">sticklebackCipher</a></li>
 </div>
 
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
