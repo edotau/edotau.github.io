@@ -262,7 +262,7 @@ color:rgba(0, 0, 0, 0.4);
 <h3>Genomic Basis of Adaptive Evolution</h3>
 Stickleback repeated adaptation to new environments provide a powerful mechanism to study the molecular genetics of evolutionary changes in wild populations. As we develop stickleback genomic sequencing technologies, we can start mapping genes that control evolutionary change to the genetic basis of adaptive evolution. <a href="https://www.nature.com/articles/nature10944.pdf">Jones et al. 2012</a>
 <h3>Marine Stickleback Genome</h3>
-
+By combining several long read sequencing technologies with comprehensive enhanced informative short read Illumina sequencing, the newly minted marine stickleback genome was assembled into 22 chromosomes, 455MB in genome length with an N50 of 21,246,911 base pairs and nearly gapless with only 715 gaps remaining.<br><br>
 
 <li>Visualization: <a href="http://genome.ucsc.edu/cgi-bin/hgHubConnect?hgHub_do_redirect=on&hgHubConnect.remakeTrackHub=on&hgHub_do_firstDb=1&hubUrl=http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/hub.txt">UCSC Browser</a></li>
 
@@ -284,10 +284,19 @@ Stickleback repeated adaptation to new environments provide a powerful mechanism
 Two different F1 hybrid (Freshwater x Marine) <a href="https://en.wikipedia.org/wiki/Three-spined_stickleback">stickleback</a> fish were crossed from <a href="https://www.google.com/maps/place/Matadero+Creek/@37.4241044,-122.1510844,14z/data=!3m1!4b1!4m5!3m4!1s0x808fbaf41f10715b:0xc780fcc2d1157053!8m2!3d37.4241062!4d-122.1335748"> Matadero Creek</a> with <a href="https://www.google.com/maps/place/Little+Campbell+River/@49.0339164,-122.7053782,13z/data=!3m1!4b1!4m5!3m4!1s0x5485c5e345db5175:0x48382b94481b427a!8m2!3d49.0339216!4d-122.6703588"> Little Campbell</a> and <a href="https://www.google.com/maps/place/Rabbit+Slough/@61.5398359,-149.3153327,14z/data=!4m5!3m4!1s0x56c8e14ff29fb997:0x4542770c26b5618a!8m2!3d61.5333333!4d-149.2666666"> Rabbit Slough</a> with <a href="https://www.google.com/maps/place/Matanuska+Lake/@61.555098,-149.2414204,15z/data=!3m1!4b1!4m5!3m4!1s0x56c8e17081d30ab5:0x911087de19454c0b!8m2!3d61.5550708!4d-149.231791"> Lake Matanuska</a>. A Summary Table of populations sampled and libraries sequenced to investigate each allele are described in panel B. We generated <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/"> ATAC-Seq</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2949280/"> RNA-Seq</a>, and <a href="https://www.internationalgenome.org/sites/1000genomes.org/files/docs/nature09534.pdf"> WGS</a> libraries to screen for allele specific enhancers near regions of increased chromatin accessibility that could perhaps be regulating differential gene expression. We perform a <a href="https://en.wikipedia.org/wiki/Fisher%27s_exact_test"> Fisher's Exact Test</a> genome-wide to determine statistical significance if heterogygous SNPs sites are differentially increased or decreased in chromatin accessibility are enhancers or regulatory elements nearby differentially expressed genes.<br><br>
 <img src="pictures/pilotF1Hybrid.svg" style="padding: 0px 0px">
 <h3>Differential Chromatin Accessibility and Gene Expression</h3>
+
+<br>
 <li>Results: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/beds/differentialChromatin/"> Download</a></li><br>
 <img src="pictures/chr04_30595050_30815018.svg">
 
 </div>
+After genotyping 18 stickleback genomes and 4 transcriptomes, 9,468,248 SNPs genome wide were detcted. Testing each heterogygous SNPs sites pinpointed to this PLXNA4 gene located neat the end of chromosome 4 spanning a little more than 200 kb.<br><br>
+ 
+In the F1 hybrid WGS data is heterozygous for both SNPs. However, in the atac-seq cross, the genotype is homozygous suggesting one of the alleles is differentially increased in chromatin accessibility, while the other allele is completely closed. What is even more interesting is nearby in the rna-seq data shows gene expression is clearly downregulated in one allele and increased gene expression with the other allele.<br><br>
+
+What's know about PLXNA4? PLXNA4 is a member of the Plexin-A family, a receptor for secreted semaphorin class 3 (SEMA3A) and class 6 (SEMA6) proteins, which mediate the effects of multiple semaphorins, including controlling diverse aspects of the nervous system development and plasticity, ranging from axon guidance and neuron migration to synaptic organization <a href="https://science.sciencemag.org/content/342/6158/1241974">Sun et al., 2013</a>. PLXNA4 has recently been identified in genome wide association studies (GWAS), as a novel genetic player associated with Alzheimer's disease <a href="https://www.frontiersin.org/articles/10.3389/fnins.2018.00946/full">Han et al., 2018</a>.
+
+
 
 <h3>Raw Data</h3>
 <li>ATAC-Seq: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/atacseq/">fastqs</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/atacseq/">bams</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/bams/atacseq/peakCalls">peaks</a></li>
@@ -303,12 +312,14 @@ Two different F1 hybrid (Freshwater x Marine) <a href="https://en.wikipedia.org/
 <li>github.com/edotau/<a href="https://github.com/edotau/goFish">goFish</a>
 <li>Slurm Compute Cluster: <a href="https://github.com/edotau/sticklebackCipher">sticklebackCipher</a></li>
 </div>
+<br>
 
+<img src="pictures/inversions.svg">
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
 <h3>Lowe Lab Software</h3>
 
 <li>Website: <a href="http://www.vertgenlab.org/">vertgenlab</a></li>
-<li>github.com/ <a href="https://github.com/edotau/sticklebackCipher">gonomics</a></li>
+<li>github.com/ <a href="https://github.com/vertgenlab/gonomics">gonomics</a></li>
 
 
 </div>
