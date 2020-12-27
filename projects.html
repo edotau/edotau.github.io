@@ -260,9 +260,9 @@ color:rgba(0, 0, 0, 0.4);
 </div>
 <div style="max-width: 1080px; min-width: 375px; margin: auto;">
 <h3>Genomic Basis of Adaptive Evolution</h3>
-Stickleback repeated adaptation to new environments provide a powerful mechanism to study the molecular genetics of evolutionary changes in wild populations. As we develop stickleback genomic sequencing technologies, we can start mapping genes that control evolutionary change to the genetic basis of adaptive evolution <a href="https://www.nature.com/articles/nature10944.pdf">Jones et al. 2012</a>.
+Stickleback repeated adaptation to new environments provide a powerful mechanism to study the molecular genetics of evolutionary changes in wild populations. As we develop stickleback genomic sequencing technologies, we can start mapping genes that control evolutionary change to the genetic basis of adaptive evolution.
 <h3>Marine Stickleback Genome</h3>
-By combining several long read sequencing technologies with comprehensive enhanced informative short read Illumina sequencing, the newly minted marine stickleback genome was assembled into 22 chromosomes, 455MB in genome length with an N50 of 21,246,911 base pairs and nearly gapless with only 715 gaps remaining.<br><br>
+The newly minted marine stickleback genome was assembled into 22 chromosomes, 455MB in genome length with an N50 of 21,246,911 base pairs and nearly gapless with only 715 gaps remaining. The marine stickleback was from the Rabbit Slough, Alaska population was was sequenced by combining several long read sequencing technologies with comprehensive enhanced informative short read Illumina sequencing.<br><br>
 
 <li>Visualization: <a href="http://genome.ucsc.edu/cgi-bin/hgHubConnect?hgHub_do_redirect=on&hgHubConnect.remakeTrackHub=on&hgHub_do_firstDb=1&hubUrl=http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/hub.txt">UCSC Browser</a></li>
 
@@ -271,8 +271,14 @@ By combining several long read sequencing technologies with comprehensive enhanc
 <li>Raw Fastq Data Files: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/assembly/pacbio/">PacBio</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/assembly/10xGenomics/">10x Genomics</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/assembly/hic">Hi-C</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/raw_data/assembly/nanopore">Nanopore</a>
 </li>
 </div>
+<br>
+Hi-C libraries are commonly used today for assemblying draft genomes and often for quality control and validation. These libraries can provide insight into 3-D chomosome structures and investigate chromosome interactions in close proximity. A freshwater three-spine stickleback Hi-C library previously provided a noticable improvement to the Gasterosteus aculeatus freshwater assembly (<a href="https://academic.oup.com/jhered/article/108/6/693/3957968">Catherine L Peichel, 2017</a>).<br><br> After we sequenced a marine stickleback Hi-C library, the next question we wanted to ask was: How do the Hi-C heatmap profiles compare to one another if we mapped freshwater Hi-C data to a freshwater reference and then map the same freshwater data but this time to the marine stickleback reference? Similarly, if we took a marine Hi-C library and mapped the read to a freshwater reference, how do the heatmap signatures look compared to when we mapped the reads to the marine reference?<br><br>
+
+Is it possible to find chromosomal translocations between freshwater Hi-C to marine genomes or marine Hi-C to freshwater genomes?<br> <br>Shockingly no, in all 4 scenarios, the heatmaps look exactly identical suggesting no chromosomal rearrangements between marine and freshwater three-spine stickleback, but also that both freshwater and marine reference genomes are assembled to very high qualities!
+<img src="pictures/hic-plot.svg">
 
 <h3>Genome-Wide Variation Between Freshwater and Marine Stickleback</h3>
+Performing marine to freshwater genome alignments and comparisons reveal consistent findings with previous work which identified 3 marine freshwater chromosome inversions located on chromosomes 1, 11, and 21 <a href="https://www.nature.com/articles/nature10944.pdf">Jones et al. 2012</a>. On the marine stickleback genome coordinates, the inversions span roughly from 26.630.694 to 27,081,942 on chromosome one, 6,311,704 to 6,740,674 on chromosome eleven, and 9,570,312 to 11,281,238 on chromosome twenty-one.
 <img src="pictures/inversions.svg">
 <li>Alignments: <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/axts">Axts</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/rabsBepa/bams">Bams</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/chains">Chains</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/nets">Nets</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/mashmap">Mashmap</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/nets">Nets</a>, <a href="http://trackhub.genome.duke.edu/lowelab/edotau/rabsTHREEspine/myHub/nucmer">Nucmer</a></li>
 
