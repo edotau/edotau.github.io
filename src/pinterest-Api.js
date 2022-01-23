@@ -76,7 +76,6 @@ export function DropNewsBlog() {
           id="accessibility-example"
           onDismiss={() => setOpen(false)}
         >
-
           <Dropdown.Section
             label="News">
             <Dropdown.Item
@@ -91,7 +90,7 @@ export function DropNewsBlog() {
               option={{
                 value: 'Mary-Claire King',
                 label: 'Mary-Claire King',
-                subtext: 'One of my most favorite scientist of all time. While she is probably most famous for her work on the breast cancer gene BRCA1, I am a bigger fan of her work that changed our view of evolution when she demonstrated protein-coding DNA sequences of humans and chimpanzees are 99% identical.',
+                subtext: 'One of my most favorite scientist of all time is in fact Mary-Claire King. While she is probably most famous for her work on the breast cancer gene BRCA1, I am a bigger fan of her work that changed our view of evolution when she demonstrated protein-coding DNA sequences of humans and chimpanzees are 99% identical.',
               }}
               selected={selected}
             />
@@ -107,12 +106,9 @@ export function DropNewsBlog() {
               selected={selected}
               href="https://idontmind.com/"
             />
-
           </Dropdown.Section>
-
         </Dropdown>
       )}
-
     </Flex>
   );
 }

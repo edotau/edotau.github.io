@@ -34,7 +34,6 @@ export const App: React.FunctionComponent = () => {
   <Stack horizontalAlign="end" verticalAlign="end" ><DropNewsBlog/></Stack>
     <Text variant="xxLarge" styles={boldStyle} >About Me</Text></Stack>
 
-
    <Stack styles={stackTheme}
     tokens={stackTokens}>
       <Text variant="medium" >{"\n"}Hello Hello! I studied Applied Mathematics & CS and my love for developmental biology pushed me to develop a variety of skills in both computer science and molecular genetics. My previous projects combine computational methods with a deep understanding of high throughput genetic sequencing of recombinant DNA. </Text></Stack>
