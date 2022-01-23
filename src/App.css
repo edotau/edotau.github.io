@@ -1,9 +1,12 @@
 .App {
   text-align: center;
+  padding-bottom: 15px;
+  white-space: pre-line;
 }
 
 .App-logo {
   height: 40vmin;
+  white-space: pre-line;
   pointer-events: none;
 }
 
@@ -13,8 +16,12 @@
   }
 }
 
+.DropNewsBlog-header {
+    justify-content: right;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: #fefefe;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,10 +29,13 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
 .App-link {
   color: #61dafb;
+  font-size: 10px;
+  padding-bottom: 15px;
 }
 
 @keyframes App-logo-spin {
