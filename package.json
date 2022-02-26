@@ -1,6 +1,5 @@
 {
   "private": true,
-  "repository": "https://github.com/edotau/edotau.github.io",
   "scripts": {
     "dev": "next",
     "lint": "next lint",
