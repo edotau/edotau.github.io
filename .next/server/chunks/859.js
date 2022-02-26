@@ -2,7 +2,7 @@ exports.id = 859;
 exports.ids = [859];
 exports.modules = {
 
-/***/ 7:
+/***/ 6007:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -134,6 +134,35 @@ function initHeadManager() {
 
 /***/ }),
 
+/***/ 9311:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({
+    value: true
+}));
+exports.cancelIdleCallback = exports.requestIdleCallback = void 0;
+const requestIdleCallback = typeof self !== 'undefined' && self.requestIdleCallback && self.requestIdleCallback.bind(window) || function(cb) {
+    let start = Date.now();
+    return setTimeout(function() {
+        cb({
+            didTimeout: false,
+            timeRemaining: function() {
+                return Math.max(0, 50 - (Date.now() - start));
+            }
+        });
+    }, 1);
+};
+exports.requestIdleCallback = requestIdleCallback;
+const cancelIdleCallback = typeof self !== 'undefined' && self.cancelIdleCallback && self.cancelIdleCallback.bind(window) || function(id) {
+    return clearTimeout(id);
+};
+exports.cancelIdleCallback = cancelIdleCallback; //# sourceMappingURL=request-idle-callback.js.map
+
+
+/***/ }),
+
 /***/ 699:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
@@ -144,10 +173,10 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.initScriptLoader = initScriptLoader;
 exports["default"] = void 0;
-var _react = _interopRequireWildcard(__webpack_require__(689));
-var _headManagerContext = __webpack_require__(796);
-var _headManager = __webpack_require__(7);
-var _requestIdleCallback = __webpack_require__(311);
+var _react = _interopRequireWildcard(__webpack_require__(6689));
+var _headManagerContext = __webpack_require__(2796);
+var _headManager = __webpack_require__(6007);
+var _requestIdleCallback = __webpack_require__(9311);
 function _defineProperty(obj, key, value) {
     if (key in obj) {
         Object.defineProperty(obj, key, {
@@ -354,7 +383,7 @@ exports["default"] = _default; //# sourceMappingURL=script.js.map
 
 /***/ }),
 
-/***/ 105:
+/***/ 3105:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -384,12 +413,12 @@ __webpack_unused_export__ = ({
 exports.Html = Html;
 exports.Main = Main;
 __webpack_unused_export__ = void 0;
-var _react = _interopRequireWildcard(__webpack_require__(689));
-var _constants = __webpack_require__(724);
-var _utils = __webpack_require__(232);
-var _getPageFiles = __webpack_require__(140);
-var _utils1 = __webpack_require__(368);
-var _htmlescape = __webpack_require__(716);
+var _react = _interopRequireWildcard(__webpack_require__(6689));
+var _constants = __webpack_require__(6724);
+var _utils = __webpack_require__(9232);
+var _getPageFiles = __webpack_require__(4140);
+var _utils1 = __webpack_require__(6368);
+var _htmlescape = __webpack_require__(9716);
 var _script = _interopRequireDefault(__webpack_require__(699));
 var _isError = _interopRequireDefault(__webpack_require__(676));
 function _interopRequireDefault(obj) {
@@ -933,10 +962,10 @@ function getAmpPath(ampPath, asPath) {
 
 /***/ }),
 
-/***/ 859:
+/***/ 6859:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__(105)
+module.exports = __webpack_require__(3105)
 
 
 /***/ })

@@ -4,7 +4,7 @@ exports.id = 888;
 exports.ids = [888];
 exports.modules = {
 
-/***/ 849:
+/***/ 9849:
 /***/ ((module) => {
 
 // Exports
@@ -15,7 +15,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 71:
+/***/ 1071:
 /***/ ((module) => {
 
 // Exports
@@ -27,7 +27,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 412:
+/***/ 2412:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -45,7 +45,7 @@ var jsx_runtime_ = __webpack_require__(997);
 const head_namespaceObject = require("next/head");
 var head_default = /*#__PURE__*/__webpack_require__.n(head_namespaceObject);
 // EXTERNAL MODULE: ./components/layout.module.css
-var layout_module = __webpack_require__(849);
+var layout_module = __webpack_require__(9849);
 var layout_module_default = /*#__PURE__*/__webpack_require__.n(layout_module);
 ;// CONCATENATED MODULE: ./components/layout.js
 
@@ -68,9 +68,9 @@ function Layout({ children  }) {
 };
 
 // EXTERNAL MODULE: ./node_modules/next/link.js
-var next_link = __webpack_require__(664);
+var next_link = __webpack_require__(1664);
 // EXTERNAL MODULE: ./components/sidebar.module.css
-var sidebar_module = __webpack_require__(71);
+var sidebar_module = __webpack_require__(1071);
 var sidebar_module_default = /*#__PURE__*/__webpack_require__.n(sidebar_module);
 ;// CONCATENATED MODULE: ./components/sidebar.js
 
@@ -148,7 +148,7 @@ module.exports = require("next/dist/server/denormalize-page-path.js");
 
 /***/ }),
 
-/***/ 14:
+/***/ 4014:
 /***/ ((module) => {
 
 "use strict";
@@ -156,7 +156,7 @@ module.exports = require("next/dist/shared/lib/i18n/normalize-locale-path.js");
 
 /***/ }),
 
-/***/ 524:
+/***/ 8524:
 /***/ ((module) => {
 
 "use strict";
@@ -164,7 +164,7 @@ module.exports = require("next/dist/shared/lib/is-plain-object.js");
 
 /***/ }),
 
-/***/ 20:
+/***/ 8020:
 /***/ ((module) => {
 
 "use strict";
@@ -172,7 +172,7 @@ module.exports = require("next/dist/shared/lib/mitt.js");
 
 /***/ }),
 
-/***/ 964:
+/***/ 4964:
 /***/ ((module) => {
 
 "use strict";
@@ -180,7 +180,7 @@ module.exports = require("next/dist/shared/lib/router-context.js");
 
 /***/ }),
 
-/***/ 565:
+/***/ 9565:
 /***/ ((module) => {
 
 "use strict";
@@ -188,7 +188,7 @@ module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-
 
 /***/ }),
 
-/***/ 365:
+/***/ 4365:
 /***/ ((module) => {
 
 "use strict";
@@ -196,7 +196,7 @@ module.exports = require("next/dist/shared/lib/router/utils/get-middleware-regex
 
 /***/ }),
 
-/***/ 428:
+/***/ 1428:
 /***/ ((module) => {
 
 "use strict";
@@ -204,7 +204,7 @@ module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
 
 /***/ }),
 
-/***/ 292:
+/***/ 1292:
 /***/ ((module) => {
 
 "use strict";
@@ -220,7 +220,7 @@ module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
 
 /***/ }),
 
-/***/ 52:
+/***/ 6052:
 /***/ ((module) => {
 
 "use strict";
@@ -228,7 +228,7 @@ module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js"
 
 /***/ }),
 
-/***/ 226:
+/***/ 4226:
 /***/ ((module) => {
 
 "use strict";
@@ -236,7 +236,7 @@ module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
 
 /***/ }),
 
-/***/ 422:
+/***/ 5052:
 /***/ ((module) => {
 
 "use strict";
@@ -244,7 +244,7 @@ module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
 
 /***/ }),
 
-/***/ 232:
+/***/ 9232:
 /***/ ((module) => {
 
 "use strict";
@@ -252,7 +252,7 @@ module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
 
-/***/ 689:
+/***/ 6689:
 /***/ ((module) => {
 
 "use strict";
@@ -275,7 +275,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [730,664], () => (__webpack_exec__(412)));
+var __webpack_exports__ = __webpack_require__.X(0, [190,676,664], () => (__webpack_exec__(2412)));
 module.exports = __webpack_exports__;
 
 })();
