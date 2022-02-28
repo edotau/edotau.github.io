@@ -1,8 +1,8 @@
 .main {
   display: flex;
   height: calc(130vh - 64px);
-  width: 100%;
   background-color: white;
+  min-width: 900px;
 }
 
 .main > section {
