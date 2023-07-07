@@ -189,13 +189,13 @@
                             })
                         }), "\n", (0, h.jsx)("div", {
                             align: "center",
-                            width: "100%",
+                            width: "80%",
                             children: (0, h.jsx)("a", {
                                 "data-pin-do": "embedBoard",
                                 "data-pin-board-width": "900",
                                 "data-pin-scale-height": "380",
                                 "data-pin-scale-width": "75",
-                                href: "https://www.pinterest.com/edotau/redefinedfashiongame/"
+                                href: "https://www.pinterest.com/edotau/redefined"
                             })
                         })]
                     })
