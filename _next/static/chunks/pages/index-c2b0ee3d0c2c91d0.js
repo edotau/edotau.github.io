@@ -231,9 +231,6 @@
                         name: "Gold Ventures LLC",
                         route: "/resume"
                     }, {
-                        name: "projects",
-                        route: "/projects"
-                    }, {
                         name: "resume",
                         route: "/resume"
                     }]
