@@ -23,7 +23,6 @@ jobs:
         uses: actions/setup-node@v2
       - run: npm install
       - run: npm run build
-      - run: npm run deploy
         env:
             CI: true
 
