@@ -12,14 +12,6 @@ jobs:
         with:
           persist-credentials: true # typically should be true for deployments
 
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            .yarn
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
       - name: Install Dependencies
         uses: actions/setup-node@v4
         with:
