@@ -13,7 +13,7 @@
     "build": "babel src -d dist",
     "clean": "rm -rf dist",
     "dist": "yarn run clean && yarn run build",
-    "deploy": "yarn run dist && gh-pages -d ./"
+    "deploy": "yarn run dist && gh-pages -d build"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
