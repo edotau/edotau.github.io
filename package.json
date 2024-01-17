@@ -1,45 +1,45 @@
 {
-  "private": true,
+  "name": "edotau",
+  "version": "1.0.21",
+  "homepage": "https://myusername.github.io/my-app",
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "next",
-    "lint": "next lint",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "deploy": "rm -rf node_modules/.cache && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.8.1",
-    "@emotion/styled": "^11.8.1",
-    "@mui/material": "^5.4.3",
-    "babel-plugin-transform-define": "^2.0.1",
-    "gray-matter": "^4.0.2",
-    "next": "^12.1.0",
-    "next-optimized-images": "^2.6.2",
-    "nextra": "^2.0.0-beta.5",
-    "nextra-theme-blog": "^0.1.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "remark-html": "^15.0.1",
-    "rss": "^1.2.2",
-    "video.js": "latest",
-    "videojs-youtube": "latest"
-  },
-  "prettier": {
-    "arrowParens": "always",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "none",
-    "semi": false
+    "start": "webpack-dev-server",
+    "docs": "NODE_ENV=production webpack -p",
+    "build": "babel src -d dist",
+    "clean": "rm -rf dist",
+    "dist": "yarn run clean && yarn run build",
+    "deploy": "yarn run dist && gh-pages -d dist"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^12.1.6",
-    "eslint": "8.10.0",
-    "eslint-config-next": "12.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "gh-pages": "^3.2.3"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "prism-react-renderer": "^0.1.6",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-transition-group": "^4.4.5",
+    "styletron-engine-atomic": "^1.4.0",
+    "styletron-react": "^5.2.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
   },
-  "plugins": [
-    "@babel/plugin-transform-runtime"
-  ]
+  "peerDependencies": {
+    "react": ">= 16",
+    "react-dom": ">= 16",
+    "react-transition-group": ">= 4",
+    "styletron-engine-atomic": "^1.4.0",
+    "styletron-react": "^5.2.0"
+  },
+  "dependencies": {
+    "atomize": "^1.0.28",
+    "gh-pages": "^6.1.1"
+  }
 }

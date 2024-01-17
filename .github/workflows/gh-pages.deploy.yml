@@ -2,36 +2,36 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
+      - gh-pages
 jobs:
   build-and-deploy:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
 
       - name: Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install and Build
-        uses: actions/setup-node@v2
-      - run: npm install
-      - run: npm run build
-      - run: npm run export
+        uses: actions/setup-node@v4
+
+      - run: npm install atomize react-transition-group
+      - run: yarn add atomize react-transition-group
+      - run: yarn run install
+      - run: yarn run build
         env:
             CI: true
       - run: touch out/.nojekyll
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: out
-          CLEAN: true
+          folder: dist
