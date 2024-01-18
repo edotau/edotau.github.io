@@ -1,4 +1,4 @@
-name: Build 🏠 + 🚀
+name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
@@ -7,25 +7,25 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           persist-credentials: false
-      - name: Cache
+      - name: Cache Node Modules
         uses: actions/cache@v4
         with:
           path: |
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Install and Build
+      - name: Setup Node.js Environment
         uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: yarn install
-      - run: yarn build
+      - name: Install Dependencies
+        run: yarn install
+      - name: Build Project
+        run: yarn docs
         env:
           CI: true
-      - name: Deploy 🚀
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
