@@ -1,0 +1,1 @@
+"use strict";exports.id=426,exports.ids=[426],exports.modules={8426:(t,o,s)=>{s.d(o,{Z:()=>r});var e=s(997);s(6689);let d={logo:e.jsx("span",{children:"About me"}),project:{link:"https://github.com/edotau/nextjs-docs"},docsRepositoryBase:"https://github.com/edotau/nextjs-docs",footer:{text:""}},r=d}};

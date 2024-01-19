@@ -1,0 +1,25 @@
+{
+  "index": {
+    "title": "Introduction",
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "pagination": false
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "pagination": false
+    }
+  },
+
+
+
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page"
+  }
+}
