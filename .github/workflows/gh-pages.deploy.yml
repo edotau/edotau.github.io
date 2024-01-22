@@ -6,7 +6,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.1
@@ -21,9 +20,10 @@ jobs:
 
       - name: Install and Build
         uses: actions/setup-node@v2
-      - run: npm install
-      - run: npm run build
+      - run: yarn install
+      - run: yarn build
       - run: npm run export
+      - run: yarn deploy
         env:
             CI: true
       - run: touch out/.nojekyll
