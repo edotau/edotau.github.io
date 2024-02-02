@@ -24,7 +24,6 @@ export default {
     useOptions() {
       return {
         light: 'Light',
-        dark: 'Dark',
         system: 'System'
       }
     },
