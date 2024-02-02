@@ -26,7 +26,8 @@ export default function Home() {
             textColor="black900"
             w="90%"
             h="90%"
-            maxW="800px"
+            maxW="1200px"
+            minW="600px"
             m={{ x: "auto", y: "2rem" }}
             p={{ x: "2rem", y: "2rem" }}
             d="flex"
