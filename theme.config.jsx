@@ -3,6 +3,18 @@ export default {
   project: {
     link: 'https://github.com/edotau'
   },
+  darkMode: false,
+  feedback: {
+    content: null,
+    labels: "",
+  },
+  editLink: {
+    component: null
+  },
+  search: {
+    component: false,
+  },
+  gitTimestamp: null,
   footer: {
     text: (
       <span>
