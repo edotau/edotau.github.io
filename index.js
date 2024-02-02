@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 
 import {
@@ -132,3 +133,6 @@ export default function Home() {
     </ThemeProvider>
   );
 }
+=======
+module.exports = require("./dist");
+>>>>>>> origin/main

@@ -1,7 +1,7 @@
 {
   "name": "edotau",
   "version": "1.0",
-  "homepage": "https://edotau.github.io/",
+  "homepage": "https://audotventures.github.io/",
   "private": true,
   "scripts": {
     "dev": "next",

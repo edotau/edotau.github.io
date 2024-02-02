@@ -1,1 +1,9 @@
-{"/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/experience":"pages/experience.html","/":"pages/index.html","/projects":"pages/projects.html","/404":"pages/404.html"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/experience": "pages/experience.js",
+  "/resume": "pages/resume.js",
+  "/projects": "pages/projects.js"
+}
