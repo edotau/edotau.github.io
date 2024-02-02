@@ -3,7 +3,13 @@ export default {
   project: {
     link: 'https://github.com/edotau'
   },
-  darkMode: false,
+  head: (
+    <>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:title" content="e]" />
+      <meta property="og:description" content="" />
+    </>
+  ),
   feedback: {
     content: null,
     labels: "",
@@ -13,6 +19,15 @@ export default {
   },
   search: {
     component: false,
+  },
+  themeSwitch: {
+    useOptions() {
+      return {
+        light: 'Light',
+        dark: 'Dark',
+        system: 'System'
+      }
+    },
   },
   gitTimestamp: null,
   footer: {
