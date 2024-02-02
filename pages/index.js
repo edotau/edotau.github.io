@@ -52,7 +52,7 @@ export default function Home() {
                 Welcome to my life
               </Text>
             </Div>
-            <Div d="flex" p={{ x: "1rem", y: "1rem" }} align="left">
+            <Div justify="space-around" p={{ x: "1rem", y: "1rem" }} align="left">
             <Anchor
               href="/experience"
               target="_self"

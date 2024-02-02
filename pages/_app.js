@@ -8,7 +8,6 @@ const theme = {
   colors: {
     black900: "#1d1d1e",
     greyLight: "#f2f3f4",
-    border: "#d1d1d1"
   },
 };
 
