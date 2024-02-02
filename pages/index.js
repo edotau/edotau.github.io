@@ -24,7 +24,7 @@ export default function Home() {
       <StyleReset />
           <Div
             textColor="black900"
-            w="80%"
+            w="90%"
             h="90%"
             maxW="800px"
             m={{ x: "auto", y: "2rem" }}

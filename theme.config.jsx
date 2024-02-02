@@ -20,11 +20,11 @@ export default {
   search: {
     component: false,
   },
+  darkTheme: false,
   themeSwitch: {
     useOptions() {
       return {
         light: 'Light',
-        system: 'System'
       }
     },
   },
