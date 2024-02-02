@@ -1,31 +1,48 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { Provider as StyletronProvider } from "styletron-react";
+import { styletron } from "../styletron";
 
-export default function Document() {
-  const meta = {
-    title: 'Next.js Blog Starter Kit',
-    description: 'Clone and deploy your own Next.js portfolio in minutes.',
-    image: 'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
+class MyDocument extends Document {
+  static async getInitialProps(context) {
+    const renderPage = () =>
+      context.renderPage({
+        enhanceApp: (App) => (props) =>
+          (
+            <StyletronProvider value={styletron}>
+              <App {...props} />
+            </StyletronProvider>
+          ),
+      });
+
+    const initialProps = await Document.getInitialProps({
+      ...context,
+      renderPage,
+    });
+    const stylesheets = styletron.getStylesheets() || [];
+    return { ...initialProps, stylesheets };
   }
 
-  return (
-    <Html lang="en">
-      <Head>
-        <meta name="robots" content="follow, index" />
-        <meta name="description" content={meta.description} />
-        <meta property="og:site_name" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@edotau" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+  render() {
+    return (
+      <Html>
+        <Head>
+          {this.props.stylesheets.map((sheet, i) => (
+            <style
+              className="_styletron_hydrate_"
+              dangerouslySetInnerHTML={{ __html: sheet.css }}
+              media={sheet.attrs.media}
+              data-hydrate={sheet.attrs["data-hydrate"]}
+              key={i}
+            />
+          ))}
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
+
+export default MyDocument;

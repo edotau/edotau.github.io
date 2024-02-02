@@ -1,18 +1,10 @@
-import 'nextra-theme-blog/style.css'
-import '../styles/main.css'
+import { Provider as StyletronProvider } from "styletron-react";
+import { styletron } from "../styletron";
 
-import Layout from '../components/layout'
-import Sidebar from '../components/sidebar'
-
-
-export default function Nextra({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   return (
-    <Layout>
-      <Sidebar />
-      <>
-        <Component {...pageProps} />
-      </>
-    </Layout>
-  )
+    <StyletronProvider value={styletron}>
+      <Component {...pageProps} />
+    </StyletronProvider>
+  );
 }
-
