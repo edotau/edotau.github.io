@@ -30,8 +30,4 @@ module.exports = {
   devServer: {
     contentBase: "docs/"
   }
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> origin/main
