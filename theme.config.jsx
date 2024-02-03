@@ -20,6 +20,7 @@ export default {
   search: {
     component: false,
   },
+  darkMode: false,
   gitTimestamp: null,
   footer: {
     text: (
