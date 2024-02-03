@@ -1,12 +1,12 @@
 {
   "name": "edotau",
   "version": "1.0",
-  "homepage": "https://audotventures.github.io/",
+  "homepage": "https://edotau.github.io/",
   "private": true,
   "scripts": {
     "dev": "next",
     "deploy": "gh-pages -d docs",
-    "build": "rm -fr out && next build && mv out docs",
+    "build": "rm -r docs && next build && mv out docs",
     "start": "next start"
   },
   "devDependencies": {
