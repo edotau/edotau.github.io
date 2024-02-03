@@ -3,21 +3,24 @@
     "title": "Home",
     "theme": {
       "breadcrumb": false,
-      "toc": false
+      "toc": false,
+      "darkMode": false
     }
   },
   "experience": {
     "title": "Experience",
     "theme": {
       "breadcrumb": false,
-      "toc": false
+      "toc": false,
+      "darkMode": false
     }
   },
   "projects": {
     "title": "Projects",
     "theme": {
       "breadcrumb": false,
-      "toc": false
+      "toc": false,
+      "darkMode": false
     }
   }
 }
