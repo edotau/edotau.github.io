@@ -43,7 +43,6 @@ export default function Home() {
                 textSize="display1"
                 fontFamily="secondary"
                 textWeight="500"
-                p={{ x: "1rem", y: "1rem" }}
               >
                 Welcome to my life
               </Text>
