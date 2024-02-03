@@ -28,6 +28,14 @@ export default {
       </span>
     )
   },
-  themeSwitch: false,
+  themeSwitch: {
+    useOptions(light) {
+      return {
+        dark: 'Dark',
+        light: 'Light',
+        system: 'System',
+      }
+    }
+  }
   // ... other theme options
 }

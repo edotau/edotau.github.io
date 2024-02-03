@@ -100,7 +100,7 @@ export default function Home() {
               <Row>
                 <Col size={{ xs: "auto" }}>
                   <Div p="1rem">
-                    <Anchor href="https://www.linkedin.com/in/edotau/" target="_self" textColor="info800" textDecor="none" hoverTextColor="info900">
+                    <Anchor href="https://www.linkedin.com/in/edotau/" target="_blank" textColor="info800" textDecor="none" hoverTextColor="info900">
                       Linkedin
                     </Anchor>
                     </Div>
