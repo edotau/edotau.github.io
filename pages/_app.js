@@ -17,8 +17,14 @@ export default function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <StyleReset />
           <Div
+            w="90%"
+            h="90%"
+            maxW="900px"
+            minW="600px"
+            maxH="auto"
             textColor="black900"
             rounded="br1"
+            align="center"
             d="flex"
             textWeight="500"
             flexDir="column"

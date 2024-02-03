@@ -20,14 +20,6 @@ export default {
   search: {
     component: false,
   },
-  darkMode: false,
-  themeSwitch: {
-    useOptions() {
-      return {
-        light: 'Light',
-      }
-    },
-  },
   gitTimestamp: null,
   footer: {
     text: (

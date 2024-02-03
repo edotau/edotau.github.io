@@ -3,6 +3,7 @@
     "title": "Home",
     "href": "/",
     "theme": {
+      "themeSwitch": "Light",
       "breadcrumb": false
     }
   },
@@ -11,15 +12,15 @@
     "type": "page",
     "theme": {
       "breadcrumb": false,
-      "toc": false
+      "themeSwitch": "Light"
     }
   },
   "projects": {
     "title": "Projects",
     "type": "page",
     "theme": {
-      "breadcrumb": false,
-      "toc": false
+      "themeSwitch": "Light",
+      "breadcrumb": false
     }
   }
 }

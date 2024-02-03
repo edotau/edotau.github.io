@@ -24,10 +24,6 @@ export default function Home() {
       <StyleReset />
           <Div
             textColor="black900"
-            w="90%"
-            h="90%"
-            maxW="1200px"
-            minW="600px"
             m={{ x: "auto", y: "2rem" }}
             p={{ x: "2rem", y: "2rem" }}
             d="flex"
@@ -36,7 +32,6 @@ export default function Home() {
           >
             <Div
               p={{ x: "1rem", y: "1rem" }}
-              
               d="flex"
               flexDir="column"
               justify="center"
