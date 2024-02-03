@@ -167,7 +167,7 @@
                                     variant: "body2",
                                     underline: "none",
                                     children: [(0, h.jsxs)(n.p, {
-                                        children: ["My name is Eric and I'm a Software Engineer who studied Computer Science & Mathematics and knows more genetics than your average biologist. The curiosity I have for ", (0, h.jsx)(n.a, {
+                                        children: ["Hi there! My name is Eric and I'm a Software Engineer who studied Computer Science & Mathematics and knows more genetics than your average biologist. The curiosity I have for ", (0, h.jsx)(n.a, {
                                             href: "https://kingsley.stanford.edu/",
                                             children: "developmental biology"
                                         }), " and ", (0, h.jsx)(n.a, {
