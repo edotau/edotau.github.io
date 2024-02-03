@@ -19,11 +19,10 @@ export default function MyApp({ Component, pageProps }) {
           <Div
             textColor="black900"
             rounded="br1"
-            shadow="3"
             d="flex"
             textWeight="500"
             flexDir="column"
-            p={{ x: "1rem", y: "1rem" }}
+            fontFamily="secondary"
           >
         <Component {...pageProps} />
         </Div>
