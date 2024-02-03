@@ -1,10 +1,8 @@
 export default {
-  logo: <span></span>,
+  logo: <span>Home</span>,
   project: {
-    link: 'https://github.com/edotau'
+    link: '/'
   },
-  theme: "light",
-  darkMode: false,
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,5 +28,6 @@ export default {
       </span>
     )
   },
+  themeSwitch: false,
   // ... other theme options
 }
