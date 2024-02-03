@@ -1,26 +1,23 @@
 {
-  "home": {
+  "index": {
     "title": "Home",
-    "href": "/",
     "theme": {
-      "darkMode": false,
-      "breadcrumb": false
+      "breadcrumb": false,
+      "toc": false
     }
   },
   "experience": {
     "title": "Experience",
-    "type": "page",
     "theme": {
       "breadcrumb": false,
-      "darkMode": false,
+      "toc": false
     }
   },
   "projects": {
     "title": "Projects",
-    "type": "page",
     "theme": {
-      "darkMode": false,
-      "breadcrumb": false
+      "breadcrumb": false,
+      "toc": false
     }
   }
 }

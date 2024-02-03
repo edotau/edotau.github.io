@@ -24,10 +24,6 @@ export default function Home() {
       <StyleReset />
           <Div
             textColor="black900"
-            w="90%"
-            h="90%"
-            maxW="1200px"
-            minW="600px"
             m={{ x: "auto", y: "2rem" }}
             p={{ x: "2rem", y: "2rem" }}
             d="flex"
@@ -71,31 +67,6 @@ export default function Home() {
                 While the best chapters of my life are being written, I'm living my best life because life's too precious to spend even a single second unhappy. I hope being who I am will start redefining the boundaries of happiness, success and hard work.
               </Text>
             }
-            <Div justify="space-around" p={{ x: "1rem", y: "1rem" }} align="left">
-            <Anchor
-              href="/experience"
-              target="_self"
-            >
-              <Button
-                prefix={
-                  <Icon
-                    name="UserSolid"
-                    size="16px"
-                    color="white"
-                    m={{ r: "0.5rem" }}
-                  />
-                }
-                bg="info900"
-                hoverBg="success500"
-                rounded="circle"
-                p={{ r: "1.5rem", l: "1rem" }}
-                shadow="3"
-                hoverShadow="4"
-              >
-                EXPERIENCE
-              </Button>
-            </Anchor>
-            </Div>
             <Div d="flex" justify="space-around" align="center" p={{ x: "1rem", y: "2rem"}}>
               <Row>
                 <Col size={{ xs: "auto" }}>
@@ -129,7 +100,6 @@ export default function Home() {
               </Row>
               </Div>
           </Div>
-
     </ThemeProvider>
   );
 }
