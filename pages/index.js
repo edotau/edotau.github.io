@@ -24,6 +24,10 @@ export default function Home() {
       <StyleReset />
           <Div
             textColor="black900"
+            w="90%"
+            h="90%"
+            maxW="1200px"
+            minW="600px"
             m={{ x: "auto", y: "2rem" }}
             p={{ x: "2rem", y: "2rem" }}
             d="flex"
@@ -32,6 +36,7 @@ export default function Home() {
           >
             <Div
               p={{ x: "1rem", y: "1rem" }}
+              
               d="flex"
               flexDir="column"
               justify="center"
@@ -67,29 +72,29 @@ export default function Home() {
               </Text>
             }
             <Div justify="space-around" p={{ x: "1rem", y: "1rem" }} align="left">
-              <Anchor
-                href="/experience"
-                target="_self"
+            <Anchor
+              href="/experience"
+              target="_self"
+            >
+              <Button
+                prefix={
+                  <Icon
+                    name="UserSolid"
+                    size="16px"
+                    color="white"
+                    m={{ r: "0.5rem" }}
+                  />
+                }
+                bg="info900"
+                hoverBg="success500"
+                rounded="circle"
+                p={{ r: "1.5rem", l: "1rem" }}
+                shadow="3"
+                hoverShadow="4"
               >
-                <Button
-                  prefix={
-                    <Icon
-                      name="UserSolid"
-                      size="16px"
-                      color="white"
-                      m={{ r: "0.5rem" }}
-                    />
-                  }
-                  bg="info900"
-                  hoverBg="success500"
-                  rounded="circle"
-                  p={{ r: "1.5rem", l: "1rem" }}
-                  shadow="3"
-                  hoverShadow="4"
-                >
-                  EXPERIENCE
-                </Button>
-              </Anchor>
+                EXPERIENCE
+              </Button>
+            </Anchor>
             </Div>
             <Div d="flex" justify="space-around" align="center" p={{ x: "1rem", y: "2rem"}}>
               <Row>
