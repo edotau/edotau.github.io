@@ -1,5 +1,5 @@
 export default {
-  logo: <span>Home</span>,
+  logo: <span></span>,
   project: {
     link: 'https://github.com/edotau'
   },
