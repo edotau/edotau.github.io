@@ -1,10 +1,9 @@
 {
-  "index": {
+  "home": {
     "title": "Home",
-    "type": "page",
+    "href": "/",
     "theme": {
-      "breadcrumb": false,
-      "toc": false
+      "breadcrumb": false
     }
   },
   "experience": {

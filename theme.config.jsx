@@ -20,7 +20,7 @@ export default {
   search: {
     component: false,
   },
-  darkTheme: false,
+  darkMode: false,
   themeSwitch: {
     useOptions() {
       return {
