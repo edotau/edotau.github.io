@@ -74,7 +74,7 @@ export default function Home() {
             <Div d="flex" p={{ x: "1rem", y: "1rem" }} align="left">
             <Anchor
               href="/experience"
-              target="_self"
+              target="_blank"
             >
               <Button
                 prefix={

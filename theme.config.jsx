@@ -1,7 +1,7 @@
 export default {
-  logo: <span>Home</span>,
+  logo: <span></span>,
   project: {
-    link: '/'
+    link: 'https://edotau.github.io/'
   },
   head: (
     <>
@@ -29,11 +29,11 @@ export default {
     )
   },
   themeSwitch: {
-    useOptions(light) {
+    useOptions() {
       return {
-        dark: 'Dark',
         light: 'Light',
-        system: 'System',
+        dark: 'Dark',
+        system: 'System'
       }
     }
   }

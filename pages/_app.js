@@ -19,6 +19,8 @@ export default function MyApp({ Component, pageProps }) {
         <StyleReset />
           <Div
             justify="center"
+            w="90%"
+            h="90%"
             minW="600px"
             textColor="black900"
             rounded="br1"
