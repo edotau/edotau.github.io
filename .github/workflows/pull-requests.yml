@@ -2,18 +2,19 @@ name: pull-requests
 on:
   push:
     branches: ["main"]
+  workflow_dispatch:
 jobs:
   build-go:
-    uses: .github/workflows/golang.yml@main
+    uses: 'edotau/edotau.github.io/.github/workflows/golang.yml'
     with:
       golang: 1.22.2
   build-node:
     needs: build-go
-    uses: .github/workflows/nodejs.yml@main
+    uses: 'edotau/edotau.github.io/.github/workflows/nodejs.yml'
     with:
       nodejs: 18.x
   github-io:
     needs: build-node
-    uses: .github/workflows/nodejs.yml@main
+    uses: 'edotau/edotau.github.io/.github/workflows/gh-deploy.yaml'
     with:
       nodejs: '18.x'
