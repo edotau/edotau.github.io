@@ -10,9 +10,7 @@ services:
     depends_on:
       - db
     environment:
-      POSTGRES_SERVER_HOST: db
-      POSTGRES_USER: sparky
-      POSTGRES_PASSWORD: er11@@au
+      env_file: ./backend/.env
 
   ui:
     build:
@@ -31,8 +29,7 @@ services:
     ports:
       - '5432:5432'
     environment:
-      POSTGRES_USER: sparky
-      POSTGRES_PASSWORD: er11@@au
+      env_file: ./backend/.env
     healthcheck:
       test: "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"
       interval: "10s"
