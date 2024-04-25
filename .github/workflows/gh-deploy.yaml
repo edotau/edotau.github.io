@@ -1,41 +1,40 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy 🚀 to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
-
+  workflow_call:
+    inputs:
+      nodejs:
+        type: string
+        required: true
+  workflow_dispatch:
+env:
+  frontend: ./ui
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
-
       - name: Cache Node Modules
         uses: actions/cache@v4
         with:
           path: |
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
-
+          node-version: ${{ inputs.nodejs }}
       - name: Install Dependencies
         run: yarn install
-
       - name: Build Project
         run: yarn build
         env:
           CI: true
-
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs

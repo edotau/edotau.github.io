@@ -1,0 +1,19 @@
+name: pull-requests
+on:
+  push:
+    branches: ["main"]
+jobs:
+  build-go:
+    uses: .github/workflows/golang.yml@main
+    with:
+      golang: 1.22.2
+  build-node:
+    needs: build-go
+    uses: .github/workflows/nodejs.yml@main
+    with:
+      nodejs: 18.x
+  github-io:
+    needs: build-node
+    uses: .github/workflows/nodejs.yml@main
+    with:
+      nodejs: '18.x'
