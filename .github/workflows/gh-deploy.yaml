@@ -1,5 +1,4 @@
 name: Deploy 🚀 to GitHub Pages
-
 on:
   workflow_call:
     inputs:

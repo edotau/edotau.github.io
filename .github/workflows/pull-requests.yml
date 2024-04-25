@@ -5,16 +5,16 @@ on:
   workflow_dispatch:
 jobs:
   build-go:
-    uses: 'edotau/edotau.github.io/.github/workflows/golang.yml'
+    uses: edotau/edotau.github.io/.github/workflows/golang.yml@main
     with:
       golang: 1.22.2
   build-node:
     needs: build-go
-    uses: 'edotau/edotau.github.io/.github/workflows/nodejs.yml'
+    uses: edotau/edotau.github.io/.github/workflows/nodejs.yml@main
     with:
       nodejs: 18.x
   github-io:
     needs: build-node
-    uses: 'edotau/edotau.github.io/.github/workflows/gh-deploy.yaml'
+    uses: edotau/edotau.github.io/.github/workflows/gh-deploy.yaml@main
     with:
       nodejs: '18.x'
