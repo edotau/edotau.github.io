@@ -22,7 +22,6 @@ export default function AboutMe() {
       <StyleReset />
           <Div
             textColor="black900"
-            w="80%"
             h="90%"
             maxW="800px"
             minW="600px"
