@@ -27,7 +27,7 @@ jobs:
         run: yarn build
         working-directory: ${{ env.frontend }}
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     concurrency:
@@ -50,8 +50,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
-        working-directory: ${{ env.frontend }}
-      - run: yarn build
         working-directory: ${{ env.frontend }}
       - run: yarn export
         working-directory: ${{ env.frontend }}
