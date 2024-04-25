@@ -1,0 +1,45 @@
+.sidebar {
+    background-color: white;
+    color: #313541;
+    min-width: 250px;
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    font-family: "SF Pro Text", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid #eaecef;
+    border-left: 1px solid #eaecef;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #eaecef;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.nav {
+    display: flex;
+    padding: 10px 0;
+    flex-direction: column;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #313541;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 0.25rem;
+    font-weight: 500;
+}
+
+.nav a:hover,
+.nav .active {
+    background-color: #34495e;
+    color: #f6f8fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-footer {
+    font-size: 0.75rem;
+    text-align: center;
+    color: #9da9b9;
+}
