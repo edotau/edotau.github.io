@@ -3,7 +3,7 @@
     "version": "1.0",
     "author": "auventuresllc",
     "license": "MIT",
-    "homepage": "https://audotventures.github.io/",
+    "homepage": "https://edotau.github.io/",
     "description": "Full stack application with golang, postgres, reactjs",
     "private": true,
     "dependencies": {
@@ -28,7 +28,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "deploy": "gh-pages -d build",
+        "deploy": "react-scripts build && gh-pages -d build",
         "lint": "yarn eslint ./src",
         "clean": "yarn eslint --fix ./src",
         "build": "react-scripts build"

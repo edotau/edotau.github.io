@@ -120,45 +120,45 @@ func Logout(c *fiber.Ctx) error {
 }
 
 func GetAllUsers(c *fiber.Ctx, dbConn *sql.DB) error {
-    // Define a slice to hold all user records
-    var users []*db.User
+	// Define a slice to hold all user records
+	var users []*db.User
 
-    // Execute the query to fetch all users
-    rows, err := dbConn.Query(db.GetAllUsersQuery)
-    if err != nil {
-        // Handle any errors that occurred during the query execution
-        return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-            "success": false,
-            "errors": []string{"Database error when fetching users", err.Error()},
-        })
-    }
-    defer rows.Close()
+	// Execute the query to fetch all users
+	rows, err := dbConn.Query(db.GetAllUsersQuery)
+	if err != nil {
+		// Handle any errors that occurred during the query execution
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"success": false,
+			"errors":  []string{"Database error when fetching users", err.Error()},
+		})
+	}
+	defer rows.Close()
 
-    // Iterate over the rows and scan data into user structs
-    for rows.Next() {
-        var user db.User
-        if err := rows.Scan(&user.ID, &user.Name, &user.Email); err != nil {
-            // Handle any errors that occurred during row scanning
-            return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-                "success": false,
-                "errors": []string{"Error scanning user data", err.Error()},
-            })
-        }
-        // Append the user struct to the slice
-        users = append(users, &user)
-    }
+	// Iterate over the rows and scan data into user structs
+	for rows.Next() {
+		var user db.User
+		if err := rows.Scan(&user.ID, &user.Name, &user.Email); err != nil {
+			// Handle any errors that occurred during row scanning
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"success": false,
+				"errors":  []string{"Error scanning user data", err.Error()},
+			})
+		}
+		// Append the user struct to the slice
+		users = append(users, &user)
+	}
 
-    // Check for errors after iteration
-    if err = rows.Err(); err != nil {
-        return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-            "success": false,
-            "errors": []string{"Error iterating over user rows", err.Error()},
-        })
-    }
+	// Check for errors after iteration
+	if err = rows.Err(); err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"success": false,
+			"errors":  []string{"Error iterating over user rows", err.Error()},
+		})
+	}
 
-    // Return the slice of user data as a JSON array
-    return c.Status(fiber.StatusOK).JSON(fiber.Map{
-        "success": true,
-        "users": users,
-    })
+	// Return the slice of user data as a JSON array
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{
+		"success": true,
+		"users":   users,
+	})
 }
