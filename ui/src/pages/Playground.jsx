@@ -27,11 +27,9 @@ const Playground = () => {
                     h="100vh"
                     maxW="800px"
                     minW="600px"
-                    m={{ x: 'auto', y: '2rem', }}
                     p={{ x: '2rem', y: '2rem', }}
                     d="flex"
                     align="center"
-                    alignItems='center'
                     justify="center"
                     flexDir="column"
                 >

@@ -1,10 +1,12 @@
 import React, { useState, useEffect, } from 'react'
+import PropTypes from 'prop-types';
+
 import { Endpoints, } from '../api'
 import { deleteCookie, } from '../utils'
 import Errors from '../components/Errors'
 
-const Session = ({ history, },) => {
-  const [user, setUser, ] = useState(null,)
+const Session = ({ history }) => {
+  const [user, setUser, ] = useState(null)
   const [isFetching, setIsFetching, ] = useState(false,)
   const [errors, setErrors, ] = useState([],)
 
@@ -21,7 +23,6 @@ const Session = ({ history, },) => {
         credentials: 'include',
         headers,
       },)
-
       if (!res.ok) logout()
 
       const { success, errors = [], user, } = await res.json()
@@ -43,8 +44,8 @@ const Session = ({ history, },) => {
     },)
 
     if (res.ok) {
-      deleteCookie('token',)
-      history.push('/login',)
+      deleteCookie('token')
+      history.push(Endpoints.login)
     }
   }
 
@@ -69,11 +70,14 @@ const Session = ({ history, },) => {
             )}
           </div>
         )}
-
         <Errors errors={errors} />
       </div>
     </div>
   )
 }
+
+Session.propTypes = {
+    history: PropTypes.object.isRequired,
+};
 
 export default Session

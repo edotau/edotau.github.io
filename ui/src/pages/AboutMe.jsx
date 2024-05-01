@@ -23,6 +23,7 @@ export default function AboutMe() {
           <Div
             textColor="black900"
             h="90%"
+            align="center"
             maxW="800px"
             minW="600px"
             m={{ x: 'auto', y: '2rem', }}

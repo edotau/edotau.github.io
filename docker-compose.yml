@@ -2,7 +2,7 @@ version: '3'
 services:
   server:
     build:
-      context: ./server
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - '8081:8081'
@@ -10,8 +10,8 @@ services:
     depends_on:
       - db
     environment:
+      POSTGRES_SERVER_HOST: db
       env_file: ./backend/.env
-
   ui:
     build:
       context: ./ui
@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
 
   db:
-    image: postgres:14.11-alpine
+    image: postgres:16.2
     restart: unless-stopped
     volumes:
       - ./create_test_db.sql:/docker-entrypoint-initdb.d/create_test_db.sql

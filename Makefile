@@ -1,20 +1,17 @@
-build:
-	cd ./backend && make build && cd ../ui && yarn build
-
-run: build
-	cd backend/cmd && ./main && cd ../../ui/ && yarn && yarn start
-
-install:
-	cd ui && yarn install && cd ../backend/ && go install github.com/google/yamlfmt/cmd/@latest 
-
 clean:
 	cd ./backend && make clean && cd ../ui && yarn clean
 
-docker:
-	docker-compose build 
+init:
+	cd ./backend && make init
 
-dev:
-	docker-compose --env-file .env-sparky up --remove-orphans --force-recreate --build
+local: init
+	cd backend/cmd && ./main && cd ../../ui/ && yarn && yarn start
 
-list:
+build:
+	docker-compose build
+
+docker: build
+	docker-compose --env-file backend/.env up 
+
+ls:
 	@grep '^[^#[:space:]].*:' Makefile | cut -d ':' -f 1

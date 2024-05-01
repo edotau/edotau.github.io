@@ -1,8 +1,10 @@
 import React, { useState, } from 'react'
 import { Endpoints, } from '../api'
 import Errors from '../components/Errors'
+import PropTypes from 'prop-types';
 
-export default ({ history, },) => {
+
+const Register = ({ history }) => {
     const [user, setUser, ] = useState({
         name: '',
         email: '',
@@ -12,41 +14,43 @@ export default ({ history, },) => {
 
     const [isSubmitting, setIsSubmitting, ] = useState(false,)
     const [errors, setErrors, ] = useState([],)
-    const { name, email, password, confirmPassword, } = user
+    const { name, email, password, confirmPassword } = user
 
-    const handleChange = (e,) =>
+    const handleChange = (e) =>
         setUser({ ...user, [e.target.name]: e.target.value, },)
 
-    const handleSubmit = async (e,) => {
-        e.preventDefault()
+    const handleSubmit = async (e) => {
+    e.preventDefault();
         if (password !== confirmPassword) {
-            setErrors(['Passwords don\'t match!', ],)
-            return
-        } else {
-            try {
-                setIsSubmitting(true,)
-                const res = await fetch(Endpoints.register, {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        email,
-                        password,
-                        name,
-                    },),
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                },)
-                const { success, errors = [], } = await res.json()
-                if (success) history.push('/login',)
-                setErrors(errors,)
-            } catch (e) {
-                setErrors([e.toString(), ],)
-            } finally {
-                setIsSubmitting(false,)
-            }
+            setErrors(['Passwords don\'t match!']);
+            return;
         }
-        
-    }
+        try {
+            setIsSubmitting(true);
+            const res = await fetch(Endpoints.register, {
+                method: 'POST',
+                body: JSON.stringify({
+                    email,
+                    password,
+                    name,
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            const { success, errors = [] } = await res.json();
+            if (success) {
+                history.push('/login');
+            } else {
+                setErrors(errors);
+            }
+            
+        } catch (error) {
+            setErrors([error.toString()]);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <form onSubmit={handleSubmit}>
@@ -99,3 +103,13 @@ export default ({ history, },) => {
         </form>
     )
 }
+
+Register.propTypes = {
+    history: PropTypes.object.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    confirmPassword: PropTypes.string.isRequired,
+};
+
+export default Register

@@ -1,16 +1,16 @@
-FROM golang:1.22.2-alpine
+FROM golang:1.22-alpine
 
 RUN apk update && apk upgrade && \
     apk add --no-cache make
 
-WORKDIR /backend
-EXPOSE 8081
+WORKDIR /app
 
 COPY go.mod go.sum ./
 
-COPY . .
 RUN go mod download
 
+COPY . .
 
+EXPOSE 8081
 
-CMD ["make", "start"]
+CMD ["make", "run"]

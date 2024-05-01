@@ -9,8 +9,6 @@ import App from './App'
 const theme = {
     colors: {
         black900: '#1d1d1e',
-        greyLight: '#f2f3f4',
-        border: '#d1d1d1',
     },
 }
 
@@ -22,10 +20,10 @@ function MyApp() {
                 <Div
                     textColor="black900"
                     rounded="br1"
-                    shadow="3"
                     d="flex"
                     textWeight="500"
                     flexDir="column"
+                    h="375px"
                     p={{ x: '1rem', y: '1rem', }}
                 >
             <App />

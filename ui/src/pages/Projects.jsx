@@ -31,7 +31,6 @@ export default function Projects() {
                 justify="center"
                 flexDir="column"
             >
-
                 <Div d="flex" h="100%" flexDir="column" justify="left" p={{ x: '2rem', y: '2rem', }}>
                     <Text tag="h1" textSize="title">Golang Software Suite</Text>
                     <Text tag="p" p={{ y: '0.5rem', }}>

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"backend/api"
-	"backend/config"
+	"backend/packages/api"
+	"backend/packages/config"
 )
 
 func main() {
