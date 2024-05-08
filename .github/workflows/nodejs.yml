@@ -52,6 +52,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn install --frozen-lockfile
         working-directory: ${{ env.frontend }}
+      - run: yarn build --frozen-lockfile
+        working-directory: ${{ env.frontend }}
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
