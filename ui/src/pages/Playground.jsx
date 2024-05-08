@@ -1,69 +1,65 @@
-import React from 'react'
-import Terminal from 'terminal-in-react'
-import pseudoFileSystemPlugin from 'terminal-in-react-pseudo-file-system-plugin'
-import {
-    ThemeProvider,
-    StyleReset,
-    Text,
-    Div,
-} from 'atomize'
 
-const theme = {
-    colors: {
-        black900: '#1d1d1e',
-    },
-}
+import React, { useEffect } from 'react';
+import { Terminal } from 'primereact/terminal';
+import { TerminalService } from 'primereact/terminalservice';
 
-const Playground = () => {
+export default function Playground() {
+    const commandHandler = (text) => {
+        let response;
+        let argsIndex = text.indexOf(' ');
+        let command = argsIndex !== -1 ? text.substring(0, argsIndex) : text;
 
-    const FileSystemPlugin = pseudoFileSystemPlugin()
+        switch (command) {
+            case 'date':
+                response = 'Today is ' + new Date().toDateString();
+                break;
+
+            case 'greet':
+                response = 'Hola ' + text.substring(argsIndex + 1) + '!';
+                break;
+
+            case 'random':
+                response = Math.floor(Math.random() * 100);
+                break;
+
+            case 'clear':
+                response = null;
+                break;
+
+            default:
+                response = 'Unknown command: ' + command;
+                break;
+        }
+
+        if (response)
+            TerminalService.emit('response', response);
+        else
+            TerminalService.emit('clear');
+    };
+
+    useEffect(() => {
+        TerminalService.on('command', commandHandler);
+
+        return () => {
+            TerminalService.off('command', commandHandler);
+        };
+    }, []);
 
     return (
-        <ThemeProvider theme={theme}>
-            <StyleReset />
-                <Div
-                    textColor="black900"
-                    w="80%"
-                    h="100vh"
-                    maxW="800px"
-                    minW="600px"
-                    p={{ x: '2rem', y: '2rem', }}
-                    d="flex"
-                    align="center"
-                    justify="center"
-                    flexDir="column"
-                >
-                <Text
-                    tag="h1"
-                    textSize="display1"
-                    fontFamily="secondary"
-                    textWeight="500"
-                    p={{ x: '1rem', y: '1rem', }}
-                    >
-                    Terminal Playground
-                </Text>
-                <Terminal
-                    msg="Welcome! The bash terminal playground is currently under construction... Coming soon!"
-                    color='white'
-                    backgroundColor='black'
-                    barColor='black'
-                    style={{ fontWeight: 'bold', fontSize: '1em', }}
-                    plugins={[
-                        FileSystemPlugin,
-                    ]}
-                    shortcuts={{
-                        'darwin,win,linux': {
-                            'ctrl + a': 'echo whoo',
-                        },
-                        'linux': {
-                            'ctrl + a': 'echo hi linux',
-                        },
-                    }}
-                    
-                />
-            </Div>
-        </ThemeProvider>
-    )
+        <div className="card terminal-demo">
+            <p>
+                Enter <strong>date</strong> to display the current date, <strong>greet {'{0}'}</strong> for a message, <strong>random</strong> to get a random number and <strong>clear</strong> to clear all commands.
+            </p>
+            <Terminal 
+                welcomeMessage="Welcome to PrimeReact" 
+                prompt="primereact $" 
+                pt={{
+                    root: 'bg-gray-900 text-white border-round',
+                    prompt: 'text-gray-400 mr-2',
+                    command: 'text-primary-300',
+                    response: 'text-primary-300'
+                }} 
+            />
+        </div>
+    );
 }
-
-export default Playground

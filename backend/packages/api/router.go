@@ -32,6 +32,7 @@ func httpServer(db *sql.DB) *fiber.App {
 
 	// public
 	api.Get("/ping", Pong)
+	api.Get("/table", WithDB(GetTable, db))
 
 	api.Post("/login", WithDB(Login, db))
 	api.Post("/user", WithDB(GetAllUsers, db))

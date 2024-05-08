@@ -1,9 +1,7 @@
-FROM node:alpine
+FROM node:20-alpine
 
 RUN apk update && apk upgrade && \
     apk add --no-cache bash make yarn
-
-LABEL maintainer="Israel A."
 
 WORKDIR /app
 

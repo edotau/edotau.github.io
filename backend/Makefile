@@ -1,10 +1,13 @@
-init:
+build:
 	cd cmd && go build -o main .
+
+run:
+	cd cmd && ./main
 
 clean:
 	go fmt ./... && golangci-lint run ./... --fix
 
 start:
-	cd cmd && ./main
+	cd cmd && env=../.env ./main
 
-run: init start
+build-run: build run

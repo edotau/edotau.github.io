@@ -9,4 +9,5 @@ const (
 	GetUserByIDQuery        = `SELECT * FROM users WHERE id = $1`
 	GetUserByEmailQuery     = `SELECT * FROM users WHERE email = $1`
 	GetAllUsersQuery        = `SELECT id, email, name FROM users;`
+	GetGolfTable            = `SELECT id, club, model, loft, shaft, length, weight, torque, tip, flex FROM golf_clubs`
 )

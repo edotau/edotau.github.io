@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 8081
 
-CMD ["make", "run"]
+CMD ["make", "build-run"]

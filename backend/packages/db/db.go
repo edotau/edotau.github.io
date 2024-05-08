@@ -1,9 +1,9 @@
 package db
 
 import (
-	"backend/packages/config"
 	"database/sql"
 	"fmt"
+	"os"
 	"path/filepath"
 
 	"github.com/apex/log"
@@ -12,18 +12,19 @@ import (
 	_ "github.com/golang-migrate/migrate/v4/source/file"
 )
 
-func ConnectDB() (*sql.DB, error) {
-	user := config.Config[config.POSTGRES_USER]
-	database := config.Config[config.POSTGRES_DB]
-	host := config.Config[config.POSTGRES_SERVER_HOST]
+func ConnectDB() *sql.DB {
+	user := os.Getenv("POSTGRES_USER")
+	password := os.Getenv("POSTGRES_PASSWORD")
+	database := os.Getenv("POSTGRES_DB")
+	host := os.Getenv("POSTGRES_SERVER_HOST")
 
-	connString := fmt.Sprintf("postgresql://%s@%s:5432/%s?sslmode=disable", user, host, database)
+	endpoint := fmt.Sprintf("postgres://%s:%s@%s:5432/%s?sslmode=disable", user, password, host, database)
+	db, err := sql.Open("pgx", endpoint)
 
-	db, _ := sql.Open("postgres", connString)
-	if err := db.Ping(); err != nil {
-		return nil, err
+	if err != nil {
+		log.Fatalf("Error: Unable to connect to database: %v\n", err)
 	}
-	return db, nil
+	return db
 }
 
 func Migrate(db *sql.DB, dbName string) error {

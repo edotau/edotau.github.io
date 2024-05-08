@@ -1,4 +1,4 @@
-export const apiURl = 'http://localhost:8081'
+export const apiURl = "http://localhost:8081";
 
 export const Endpoints = {
   login: `${apiURl}/api/login`,
@@ -6,4 +6,7 @@ export const Endpoints = {
   session: `${apiURl}/api/session`,
   logout: `${apiURl}/api/logout`,
   users: `${apiURl}/api/users`,
-}
+  datatable: `${apiURl}/api/table`,
+};
+
+export default Endpoints;

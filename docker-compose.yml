@@ -11,7 +11,10 @@ services:
       - db
     environment:
       POSTGRES_SERVER_HOST: db
-      env_file: ./backend/.env
+      # Directly reference the environment file here
+    env_file:
+      - ./backend/.env
+
   ui:
     build:
       context: ./ui
@@ -24,12 +27,12 @@ services:
     image: postgres:16.2
     restart: unless-stopped
     volumes:
-      - ./create_test_db.sql:/docker-entrypoint-initdb.d/create_test_db.sql
+      - ./backend/create_test_db.sql:/docker-entrypoint-initdb.d/create_test_db.sql
       - postgres_data:/var/lib/postgresql/data
     ports:
       - '5432:5432'
     environment:
-      env_file: ./backend/.env
+      env_file: ./.env
     healthcheck:
       test: "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"
       interval: "10s"

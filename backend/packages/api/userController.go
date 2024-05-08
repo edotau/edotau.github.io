@@ -5,6 +5,7 @@ import (
 	"backend/packages/db"
 	"backend/packages/utils"
 	"database/sql"
+	"log"
 	"net/http"
 	"time"
 
@@ -15,6 +16,19 @@ import (
 type Claims struct {
 	db.User
 	jwt.StandardClaims
+}
+
+type GolfClub struct {
+	ID     int    `json:"id"`
+	Club   string `json:"club"`
+	Model  string `json:"model"`
+	Loft   string `json:"loft"`
+	Shaft  string `json:"shaft"`
+	Length string `json:"length"`
+	Weight string `json:"weight"`
+	Torque string `json:"torque"`
+	Tip    string `json:"tip"`
+	Flex   string `json:"flex"`
 }
 
 func Pong(c *fiber.Ctx) error {
@@ -161,4 +175,39 @@ func GetAllUsers(c *fiber.Ctx, dbConn *sql.DB) error {
 		"success": true,
 		"users":   users,
 	})
+}
+
+func GetTable(c *fiber.Ctx, dbConn *sql.DB) error {
+	rows, err := dbConn.Query(db.GetGolfTable)
+	if err != nil {
+		log.Printf("Database query error: %v\n", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "Failed to query the database",
+		})
+	}
+	defer rows.Close()
+
+	// Parse rows into a slice of GolfClub
+	var clubs []GolfClub
+	for rows.Next() {
+		var club GolfClub
+		if err := rows.Scan(&club.ID, &club.Club, &club.Model, &club.Loft, &club.Shaft, &club.Length, &club.Weight, &club.Torque, &club.Tip, &club.Flex); err != nil {
+			log.Printf("Error scanning rows: %v\n", err)
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"error": "Error scanning rows",
+			})
+		}
+		clubs = append(clubs, club)
+	}
+
+	// Check if there were any errors during row iteration
+	if err = rows.Err(); err != nil {
+		log.Printf("Row iteration error: %v\n", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "Error reading golf club rows",
+		})
+	}
+
+	// Return the data as a JSON array
+	return c.Status(fiber.StatusOK).JSON(clubs)
 }
