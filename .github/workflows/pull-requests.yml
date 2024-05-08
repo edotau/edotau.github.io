@@ -11,4 +11,4 @@ jobs:
   build-node:
     uses: edotau/edotau.github.io/.github/workflows/nodejs.yml@main
     with:
-      nodejs: 18.x
+      nodejs: 20.10.0
