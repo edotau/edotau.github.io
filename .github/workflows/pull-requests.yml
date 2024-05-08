@@ -1,0 +1,14 @@
+name: pull-requests
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+jobs:
+  build-go:
+    uses: edotau/edotau.github.io/.github/workflows/golang.yml@main
+    with:
+      golang: 1.22.2
+  build-node:
+    uses: edotau/edotau.github.io/.github/workflows/nodejs.yml@main
+    with:
+      nodejs: 18.x

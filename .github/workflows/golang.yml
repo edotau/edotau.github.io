@@ -1,0 +1,30 @@
+name: golang
+on:
+  workflow_call:
+    inputs:
+      golang:
+        required: true
+        type: string
+env:
+  backend: ./backend
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: golang ${{ inputs.golang }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ inputs.golang }}
+      - name: Golang Install ${{ inputs.golang }}
+        run: go install -v ./...
+        working-directory: ${{ env.backend }}
+      - name: Build
+        run: go build -v ./...
+        working-directory: ${{ env.backend }}
+      - name: Test
+        run: go test -v ./...
+        working-directory: ${{ env.backend }}
